@@ -22,7 +22,7 @@ RUN lynx -listonly -dump https://jenkins.mono-project.com/view/Xamarin.Android/j
     curl -L $(cat link.txt) \
         -o xamarin.tar.bz2 && \
     bzip2 -cd xamarin.tar.bz2 | tar -xvf - && \
-    mv oss-xamarin.android_v* /android/xamarin && \
+    mv xamarin.android-oss_v* /android/xamarin && \
     rm xamarin.tar.bz2
     
 ENV ANDROID_NDK_PATH=/android/sdk/ndk-bundle

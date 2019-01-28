@@ -23,9 +23,12 @@ RUN lynx -listonly -dump https://jenkins.mono-project.com/view/Xamarin.Android/j
         -o xamarin.tar.bz2 && \
     bzip2 -cd xamarin.tar.bz2 | tar -xvf - && \
     mv xamarin.android-oss_v* /android/xamarin && \
+    ln -s /android/xamarin/bin/Release/lib/xamarin.android/xbuild/Xamarin /usr/lib/mono/xbuild/Xamarin && \
+    ln -s /android/xamarin/bin/Release/lib/xamarin.android/xbuild-frameworks/MonoAndroid/ /usr/lib/mono/xbuild-frameworks/MonoAndroid && \
+    ln -s /usr/lib64/libzip.so.5 /usr/lib64/libzip.so.4 && \
     rm xamarin.tar.bz2
     
 ENV ANDROID_NDK_PATH=/android/sdk/ndk-bundle
-ENV ANDROID_SDK_PATH=/android/sdk/
+ENV ANDROID_HOME=/android/sdk/
 ENV PATH=/android/xamarin/bin/Debug/bin:$PATH
 ENV JAVA_HOME=/usr/lib/jvm/java/

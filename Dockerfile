@@ -1,9 +1,11 @@
-FROM fedora:28
+FROM fedora:29
+
+RUN rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
+&& su -c 'curl https://download.mono-project.com/repo/centos8-stable.repo | tee /etc/yum.repos.d/mono-centos8-stable.repo'
+&& dnf update
 
 RUN dnf install gnupg wget dnf-plugins-core -y  \
-	&& rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \
-	&& dnf config-manager --add-repo http://download.mono-project.com/repo/centos8/ \
-        && dnf install libzip bzip2 bzip2-libs mono-devel nuget msbuild referenceassemblies-pcl lynx -y \
+        && dnf install libzip bzip2 bzip2-libs mono-devel nuget msbuild lynx -y \
         && dnf clean all
 
 RUN dnf install curl unzip java-1.8.0-openjdk-headless java-1.8.0-openjdk-devel -y && \

@@ -1,4 +1,4 @@
-FROM fedora:27
+FROM fedora:29
 
 RUN dnf install gnupg wget dnf-plugins-core -y  \
 	&& rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF" \

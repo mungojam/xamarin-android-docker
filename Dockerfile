@@ -19,7 +19,6 @@ RUN lynx -listonly -dump https://jenkins.mono-project.com/view/Xamarin.Android/j
     mv xamarin.android-oss_v* /android/xamarin && \
     ln -s /android/xamarin/bin/Release/lib/xamarin.android/xbuild/Xamarin /usr/lib/mono/xbuild/Xamarin && \
     ln -s /android/xamarin/bin/Release/lib/xamarin.android/xbuild-frameworks/MonoAndroid/ /usr/lib/mono/xbuild-frameworks/MonoAndroid && \
-    ln -s /usr/lib64/libzip.so.5 /usr/lib64/libzip.so.4 && \
     rm xamarin.tar.bz2
     
 ENV ANDROID_NDK_PATH=/android/sdk/ndk-bundle

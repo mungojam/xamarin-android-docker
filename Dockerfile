@@ -1,6 +1,6 @@
 FROM mungojam/mono-build
 
-RUN apt-get install lynx wget curl unzip openjdk-8-jdk -y && \
+RUN apt-get install lynx wget curl unzip openjdk-8-jdk libzip4 -y && \
     apt-get clean all
     
 RUN mkdir -p /android/sdk && \

@@ -22,6 +22,6 @@ RUN lynx -listonly -dump https://jenkins.mono-project.com/view/Xamarin.Android/j
     rm xamarin.tar.bz2
     
 ENV ANDROID_NDK_PATH=/android/sdk/ndk-bundle
-ENV ANDROID_HOME=/android/sdk/
+ENV ANDROID_HOME=/android/sdk
 ENV PATH=/android/xamarin/bin/Debug/bin:$PATH
-ENV JAVA_HOME=/usr/bin/
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
